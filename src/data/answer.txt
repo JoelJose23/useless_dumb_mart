@@ -1,0 +1,538 @@
+```text
+USELESSMART™ ACADEMIC CAPTCHA FROM HELL™
+Question Bank
+==========================================
+
+RULE:
+Each challenge selects 3 questions from different subjects.
+
+Difficulty:
+★★★★★ = You should probably reconsider purchasing the product.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MATHEMATICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MATH-01 ★★★★★
+Let A = diag(2, 2, 3). How many 3×3 integer matrices Q
+satisfy both Q⁻¹ = Qᵀ and AQ = QA?
+
+ANSWER:
+16
+
+
+MATH-02 ★★★★★
+Evaluate exactly:
+
+∫₀^(π/2) ln(sin x) dx
+
+ANSWER:
+-(π/2)ln(2)
+
+
+MATH-03 ★★★★★
+Let f:R→R satisfy
+
+f(x + y) + f(x - y) = 2f(x)f(y)
+
+for all real x,y, with f(0)=1 and f'(0)=0.
+If f(π/3)=1/2, determine f(π).
+
+ANSWER:
+-1
+
+
+MATH-04 ★★★★★
+A point is selected uniformly at random from the interior
+of the triangle with vertices (0,0), (4,0), and (0,3).
+
+What is the probability that its distance from the origin
+is less than 1?
+
+ANSWER:
+π/24
+
+
+MATH-05 ★★★★★
+Let z be a complex number satisfying
+
+|z - 1| = |z + 1|
+
+and
+
+|z - i| = √5.
+
+If z lies in the upper half-plane, find Im(z).
+
+ANSWER:
+2
+
+
+MATH-06 ★★★★★
+The roots of
+
+x⁴ - 6x³ + 11x² - 6x + 1 = 0
+
+are α₁, α₂, α₃, α₄.
+
+Find:
+
+Σ 1/(1 + αᵢ²)
+
+over all four roots.
+
+ANSWER:
+2
+
+
+MATH-07 ★★★★★
+Let
+
+I = ∫₀¹ [ln(1+x)/(1+x)] dx.
+
+Find 2I.
+
+ANSWER:
+(ln 2)²
+
+
+MATH-08 ★★★★★
+A fair coin is tossed n times. The probability of obtaining
+exactly two heads is equal to the probability of obtaining
+exactly three heads.
+
+Find n.
+
+ANSWER:
+5
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHYSICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PHYS-01 ★★★★★
+A particle is projected with speed 20 m/s at an angle θ above
+the horizontal. Take g = 10 m/s².
+
+If its maximum height equals its horizontal range divided by 4,
+find tan(θ).
+
+ANSWER:
+1
+
+
+PHYS-02 ★★★★★
+Two identical capacitors of capacitance C are connected in
+series across a battery of voltage V.
+
+A dielectric of constant K is inserted completely into one
+capacitor while the battery remains connected.
+
+By what factor does the total electrostatic energy change?
+
+ANSWER:
+(2K)/(K+1)
+
+
+PHYS-03 ★★★★★
+A conducting spherical shell of radius R carries total charge Q.
+A point charge q is placed at its centre.
+
+What is the electric field immediately outside the shell?
+
+ANSWER:
+(Q+q)/(4πε₀R²)
+
+
+PHYS-04 ★★★★★
+A block of mass m is attached to a spring of force constant k.
+The spring is initially compressed by x₀ and the block is released
+on a frictionless horizontal surface.
+
+A second identical spring is suddenly attached in parallel when
+the block passes through equilibrium.
+
+What is the maximum subsequent displacement from the new equilibrium?
+
+ANSWER:
+x₀/√2
+
+
+PHYS-05 ★★★★★
+An electron is accelerated from rest through a potential
+difference V.
+
+Its de Broglie wavelength is λ.
+
+If the accelerating potential is increased to 4V, what is
+the new wavelength?
+
+ANSWER:
+λ/2
+
+
+PHYS-06 ★★★★★
+A particle moves according to
+
+x(t) = A cos(ωt).
+
+At what displacement magnitude does its kinetic energy equal
+its potential energy?
+
+ANSWER:
+A/√2
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHEMISTRY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CHEM-01 ★★★★★
+For the complex ion [Co(NH₃)₅Cl]²⁺, determine the oxidation
+state of cobalt and the number of unpaired electrons, assuming
+the complex is low-spin.
+
+ANSWER:
+Co = +3; unpaired electrons = 0
+
+
+CHEM-02 ★★★★★
+For the equilibrium
+
+N₂O₄(g) ⇌ 2NO₂(g)
+
+the degree of dissociation of N₂O₄ is α at total pressure P.
+
+Derive Kp in terms of α and P.
+
+ANSWER:
+4α²P/(1-α²)
+
+
+CHEM-03 ★★★★★
+A buffer contains equal concentrations of a weak acid HA and
+its conjugate base A⁻.
+
+If pKa = 4.76, what is the pH?
+
+ANSWER:
+4.76
+
+
+CHEM-04 ★★★★★
+For a first-order reaction, the half-life is 20 minutes.
+
+How much time is required for 87.5% of the reactant to decompose?
+
+ANSWER:
+60 minutes
+
+
+CHEM-05 ★★★★★
+The solubility product of Ag₂CrO₄ is Ksp.
+
+If its molar solubility in pure water is s, express Ksp in
+terms of s.
+
+ANSWER:
+4s³
+
+
+CHEM-06 ★★★★★
+In the reaction
+
+2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂
+
+how many electrons are transferred when 0.50 mol of Fe³⁺
+is completely reduced?
+
+ANSWER:
+0.50 mol
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPUTER SCIENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CS-01 ★★★★★
+A hash table uses open addressing with linear probing.
+Under a successful search, what is the expected asymptotic
+time complexity when the load factor α approaches 1?
+
+ANSWER:
+O(1/(1-α))
+
+
+CS-02 ★★★★★
+A recurrence is defined by
+
+T(n) = 2T(n/2) + n/log n
+
+for n > 2.
+
+Determine the asymptotic complexity.
+
+ANSWER:
+Θ(n log log n)
+
+
+CS-03 ★★★★★
+A directed graph has n vertices and exactly n edges.
+Every vertex has out-degree exactly 1.
+
+What must the graph contain?
+
+ANSWER:
+At least one directed cycle
+
+
+CS-04 ★★★★★
+Consider a comparison-based sorting algorithm that is stable
+and has worst-case time complexity O(n log n).
+
+Can it sort n arbitrary distinct elements using o(n) auxiliary
+memory while guaranteeing stability?
+
+ANSWER:
+Yes
+
+
+CS-05 ★★★★★
+A binary search tree contains n distinct keys.
+
+What is the worst-case time complexity of searching for a key?
+
+ANSWER:
+O(n)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STATISTICS / PROBABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STAT-01 ★★★★★
+Let X ~ Binomial(n,p).
+
+If E[X] = 6 and Var(X) = 3, determine n.
+
+ANSWER:
+12
+
+
+STAT-02 ★★★★★
+A fair six-sided die is rolled repeatedly until the first 6 appears.
+
+What is the expected number of rolls?
+
+ANSWER:
+6
+
+
+STAT-03 ★★★★★
+Two cards are drawn without replacement from a standard
+52-card deck.
+
+Given that at least one card is an ace, what is the probability
+that both cards are aces?
+
+ANSWER:
+1/33
+
+
+STAT-04 ★★★★★
+Three independent measurements have variances 4, 9 and 16.
+
+If their arithmetic mean is taken, what is the variance of
+the resulting measurement?
+
+ANSWER:
+29/9
+
+
+STAT-05 ★★★★★
+A random variable X has probability density
+
+f(x) = 2x, 0 ≤ x ≤ 1.
+
+Find Var(X).
+
+ANSWER:
+1/18
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LOGIC / DISCRETE MATHEMATICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LOGIC-01 ★★★★★
+How many onto functions exist from a 4-element set onto a
+3-element set?
+
+ANSWER:
+36
+
+
+LOGIC-02 ★★★★★
+How many derangements are there of 5 distinct objects?
+
+ANSWER:
+44
+
+
+LOGIC-03 ★★★★★
+A Boolean expression is
+
+F(A,B,C) = AB + A'B + BC.
+
+Simplify F.
+
+ANSWER:
+B + BC
+
+
+LOGIC-04 ★★★★★
+A connected planar graph has 12 vertices and 20 edges.
+
+How many faces does it have?
+
+ANSWER:
+10
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BIOLOGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BIO-01 ★★★★★
+In a diploid organism, two genes are completely linked and
+heterozygous in coupling phase:
+
+AB/ab.
+
+If crossing over between the two loci is absent, what fraction
+of gametes are recombinant?
+
+ANSWER:
+0
+
+
+BIO-02 ★★★★★
+A DNA molecule contains 30% adenine.
+
+What percentage of its bases are guanine?
+
+ANSWER:
+20%
+
+
+BIO-03 ★★★★★
+A population is in Hardy-Weinberg equilibrium.
+
+If the recessive phenotype occurs with frequency 0.09,
+what percentage of the population is heterozygous?
+
+ANSWER:
+42%
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ECONOMICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ECON-01 ★★★★★
+A firm's total cost is
+
+TC(q) = q³ - 6q² + 15q + 10.
+
+At what positive quantity is marginal cost minimized?
+
+ANSWER:
+2
+
+
+ECON-02 ★★★★★
+A good has price elasticity of demand equal to -2.
+
+If its price rises by 5%, approximately what happens to
+quantity demanded?
+
+ANSWER:
+Decreases by 10%
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FINAL BOSS QUESTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BOSS-01 ★★★★★
+Let A be a 3×3 real matrix satisfying
+
+A² = A
+
+and
+
+trace(A) = 2.
+
+What is det(A)?
+
+ANSWER:
+0
+
+
+BOSS-02 ★★★★★
+A particle executes simple harmonic motion with amplitude A.
+
+At what fraction of the amplitude is its speed equal to half
+of its maximum speed?
+
+ANSWER:
+√3/2
+
+
+BOSS-03 ★★★★★
+Evaluate:
+
+Σ(k=1 to n) k·2ᵏ
+
+in closed form.
+
+ANSWER:
+(n-1)2^(n+1) + 2
+
+
+BOSS-04 ★★★★★
+A fair coin is tossed until either HHH or TTT occurs.
+
+What is the expected number of tosses?
+
+ANSWER:
+4
+
+
+BOSS-05 ★★★★★
+For the polynomial
+
+P(x) = x⁵ - 5x⁴ + 10x³ - 10x² + 5x - 1,
+
+find the sum of all its roots.
+
+ANSWER:
+5
+
+
+BOSS-06 ★★★★★
+A particle of mass m moving with speed v collides elastically
+head-on with an identical particle initially at rest.
+
+What is the speed of the first particle after collision?
+
+ANSWER:
+0
+
+
+==========================================
+END OF QUESTION BANK
+==========================================
+```
