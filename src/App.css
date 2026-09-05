@@ -135,6 +135,75 @@
   }
 }
 
+.reveal-button {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.reveal-button:hover {
+  background: #111;
+  color: #fff;
+}
+
+.secret-bypass {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  opacity: 0.55;
+}
+
+.secret-bypass span {
+  display: block;
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.secret-bypass input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 7px 9px;
+  font-size: 11px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #fafafa;
+  color: #222;
+}
+
+.secret-bypass input:focus {
+  border-color: #999;
+}
+
+.reveal-message {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #111;
+  background: #f5f5f5;
+  color: #111;
+  font-size: 14px;
+  font-weight: 600;
+  animation: revealPop 0.25s ease-out;
+}
+
+@keyframes revealPop {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* HERO */
 
 .hero-section {

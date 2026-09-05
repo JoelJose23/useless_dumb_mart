@@ -2,6 +2,8 @@ import { useState, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AcademicCaptcha from "../components/AcademicCaptcha";
 import FakeLoader from "../components/FakeLoader";
+import MadhavEttanPopup from "../components/MadhavEttanPopup";
+import Ads from "../components/Ads";
 import { useCart } from "../context/CartContext";
 
 import {
@@ -39,31 +41,35 @@ export default function ProductDetails() {
   const [showLoader, setShowLoader] = useState(false);
 
   /*
-   * This only STARTS the purchase process.
+   * Add to Cart
    *
-   * The product is NOT added to the cart yet.
-   * First they must survive the Academic CAPTCHA™.
+   * The CAPTCHA is always shown first.
+   * The secret bypass phrase is handled inside
+   * AcademicCaptcha.jsx.
    */
   const handleAddToCart = () => {
     setShowCaptcha(true);
   };
 
+  /*
+   * Once either:
+   * 1. The CAPTCHA is successfully solved
+   * 2. The secret phrase "I am Useless" is entered
+   *
+   * AcademicCaptcha calls onSuccess().
+   */
+  const handleCaptchaSuccess = () => {
+    setShowCaptcha(false);
+    setShowLoader(true);
+  };
+
+  /*
+   * Fake loader completion
+   */
   const handleLoaderComplete = useCallback(() => {
-    /*
-     * The customer has successfully:
-     *
-     * 1. Selected a product
-     * 2. Passed the Academic CAPTCHA™
-     * 3. Waited for our extremely important
-     *    fake transaction processing
-     *
-     * NOW we actually put the product in the cart.
-     * Navigate FIRST so React Router commits before
-     * local state unmounts the loader overlay.
-     */
     addToCart(product, quantity);
-    navigate("/cart");
     setShowLoader(false);
+    navigate("/cart");
   }, [addToCart, navigate, product, quantity]);
 
   if (!product) {
@@ -87,45 +93,34 @@ export default function ProductDetails() {
   return (
     <div className="product-details-page">
 
-      {/* =====================================================
+      <MadhavEttanPopup product={product} />
+
+      <Ads />
+
+      {/* =========================
           ACADEMIC CAPTCHA
-          ===================================================== */}
+         ========================= */}
 
       {showCaptcha && (
         <AcademicCaptcha
-          onSuccess={() => {
-            /*
-             * CAPTCHA passed.
-             *
-             * Hide the CAPTCHA and start the fake
-             * transaction loader.
-             */
-            setShowCaptcha(false);
-            setShowLoader(true);
-          }}
-
-          onFailure={() => {
-            /*
-             * IMPORTANT:
-             *
-             * Do NOT setShowCaptcha(false) here.
-             *
-             * AcademicCaptcha handles the failure UI itself,
-             * so the user remains trapped inside the CAPTCHA.
-             */
-          }}
+          onSuccess={handleCaptchaSuccess}
+          onFailure={() => {}}
         />
       )}
 
-      {/* =====================================================
+      {/* =========================
           FAKE LOADER
-          ===================================================== */}
+         ========================= */}
 
-      {showLoader && <FakeLoader onComplete={handleLoaderComplete} />}
+      {showLoader && (
+        <FakeLoader
+          onComplete={handleLoaderComplete}
+        />
+      )}
 
-      {/* =====================================================
+      {/* =========================
           WARNING
-          ===================================================== */}
+         ========================= */}
 
       <div className="product-warning">
         <AlertTriangle size={15} />
@@ -138,9 +133,9 @@ export default function ProductDetails() {
 
       <main className="product-container">
 
-        {/* =====================================================
-            BACK
-            ===================================================== */}
+        {/* =========================
+            BACK BUTTON
+           ========================= */}
 
         <button
           className="back-button"
@@ -150,24 +145,22 @@ export default function ProductDetails() {
           Back to products
         </button>
 
-        {/* =====================================================
+        {/* =========================
             BREADCRUMB
-            ===================================================== */}
+           ========================= */}
 
         <div className="breadcrumb">
           Home / Products / {product.category} /{" "}
           <strong>{product.name}</strong>
         </div>
 
-        {/* =====================================================
-            MAIN PRODUCT
-            ===================================================== */}
+        {/* =========================
+            PRODUCT MAIN
+           ========================= */}
 
         <section className="product-main">
 
-          {/* =================================================
-              PRODUCT IMAGE
-              ================================================= */}
+          {/* PRODUCT IMAGE */}
 
           <div className="product-image-section">
 
@@ -202,9 +195,7 @@ export default function ProductDetails() {
 
           </div>
 
-          {/* =================================================
-              PRODUCT INFO
-              ================================================= */}
+          {/* PRODUCT INFORMATION */}
 
           <div className="product-info">
 
@@ -216,7 +207,7 @@ export default function ProductDetails() {
               {product.name}
             </h1>
 
-            {/* Rating */}
+            {/* RATING */}
 
             <div className="rating-row">
 
@@ -234,7 +225,8 @@ export default function ProductDetails() {
 
               <span>
                 {product.rating} (
-                {product.reviews.toLocaleString()} reviews)
+                {product.reviews.toLocaleString()}
+                reviews)
               </span>
 
               <span className="verified">
@@ -243,14 +235,14 @@ export default function ProductDetails() {
 
             </div>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
 
             <p className="product-description">
               {product.longDescription ||
                 product.description}
             </p>
 
-            {/* Price */}
+            {/* PRICE */}
 
             <div className="price-section">
 
@@ -273,7 +265,7 @@ export default function ProductDetails() {
 
             </div>
 
-            {/* Price Warning */}
+            {/* PRICE WARNING */}
 
             <div className="price-warning">
 
@@ -283,7 +275,7 @@ export default function ProductDetails() {
 
             </div>
 
-            {/* Stock */}
+            {/* STOCK */}
 
             <div className="stock-status">
 
@@ -297,13 +289,9 @@ export default function ProductDetails() {
 
             </div>
 
-            {/* =================================================
-                PURCHASE
-                ================================================= */}
+            {/* PURCHASE ROW */}
 
             <div className="purchase-row">
-
-              {/* Quantity */}
 
               <div className="quantity-selector">
 
@@ -331,7 +319,7 @@ export default function ProductDetails() {
 
               </div>
 
-              {/* Add To Cart */}
+              {/* ADD TO CART */}
 
               <button
                 className="add-cart-button"
@@ -342,9 +330,7 @@ export default function ProductDetails() {
 
             </div>
 
-            {/* =================================================
-                SECONDARY ACTIONS
-                ================================================= */}
+            {/* SECONDARY ACTIONS */}
 
             <div className="secondary-actions">
 
@@ -353,7 +339,6 @@ export default function ProductDetails() {
                   setLiked(!liked)
                 }
               >
-
                 <Heart
                   size={17}
                   fill={
@@ -366,7 +351,6 @@ export default function ProductDetails() {
                 {liked
                   ? "You like this. Weird."
                   : "Add to wishlist"}
-
               </button>
 
               <button
@@ -376,27 +360,20 @@ export default function ProductDetails() {
                   )
                 }
               >
-
                 <Share2 size={17} />
-
                 Share product
-
               </button>
 
             </div>
 
-            {/* =================================================
-                SERVICES
-                ================================================= */}
+            {/* SERVICES */}
 
             <div className="service-grid">
 
               <div>
-
                 <Truck size={20} />
 
                 <span>
-
                   <strong>
                     Fast Delivery
                   </strong>
@@ -404,17 +381,13 @@ export default function ProductDetails() {
                   <small>
                     {product.delivery}
                   </small>
-
                 </span>
-
               </div>
 
               <div>
-
                 <ShieldCheck size={20} />
 
                 <span>
-
                   <strong>
                     Secure Purchase
                   </strong>
@@ -422,17 +395,13 @@ export default function ProductDetails() {
                   <small>
                     Probably secure
                   </small>
-
                 </span>
-
               </div>
 
               <div>
-
                 <RotateCcw size={20} />
 
                 <span>
-
                   <strong>
                     Easy Returns
                   </strong>
@@ -440,17 +409,13 @@ export default function ProductDetails() {
                   <small>
                     Subject to 47 conditions
                   </small>
-
                 </span>
-
               </div>
 
               <div>
-
                 <Package size={20} />
 
                 <span>
-
                   <strong>
                     Premium Packaging
                   </strong>
@@ -458,20 +423,17 @@ export default function ProductDetails() {
                   <small>
                     Box included*
                   </small>
-
                 </span>
-
               </div>
 
             </div>
 
           </div>
-
         </section>
 
-        {/* =====================================================
+        {/* =========================
             SPECIFICATIONS
-            ===================================================== */}
+           ========================= */}
 
         <section className="product-specs">
 
@@ -533,9 +495,9 @@ export default function ProductDetails() {
 
         </section>
 
-        {/* =====================================================
-            TABS
-            ===================================================== */}
+        {/* =========================
+            PRODUCT TABS
+           ========================= */}
 
         <section className="product-tabs">
 
@@ -597,9 +559,7 @@ export default function ProductDetails() {
 
           <div className="tab-content">
 
-            {/* =================================================
-                DESCRIPTION
-                ================================================= */}
+            {/* DESCRIPTION */}
 
             {activeTab === "description" && (
               <>
@@ -616,11 +576,8 @@ export default function ProductDetails() {
                   {product.nonsense.map(
                     (item, index) => (
                       <li key={index}>
-
                         <Check size={15} />
-
                         {item}
-
                       </li>
                     )
                   )}
@@ -628,9 +585,7 @@ export default function ProductDetails() {
               </>
             )}
 
-            {/* =================================================
-                REVIEWS
-                ================================================= */}
+            {/* REVIEWS */}
 
             {activeTab === "reviews" && (
               <div className="fake-reviews">
@@ -646,8 +601,8 @@ export default function ProductDetails() {
                   </strong>
 
                   <p>
-                    "I don't know what I bought but I
-                    bought it again."
+                    "I don't know what I bought
+                    but I bought it again."
                   </p>
 
                 </div>
@@ -659,9 +614,9 @@ export default function ProductDetails() {
                   </strong>
 
                   <p>
-                    "Delivery was late but the product
-                    was also useless, so it didn't
-                    matter."
+                    "Delivery was late but the
+                    product was also useless,
+                    so it didn't matter."
                   </p>
 
                 </div>
@@ -669,12 +624,12 @@ export default function ProductDetails() {
                 <div className="review">
 
                   <strong>
-                    ★☆☆☆☆ — Definitely Real Person
+                    ☆☆☆☆☆ — Definitely Real Person
                   </strong>
 
                   <p>
-                    "Worst experience of my life. Will
-                    purchase again."
+                    "Worst experience of my life.
+                    Will purchase again."
                   </p>
 
                 </div>
@@ -682,9 +637,7 @@ export default function ProductDetails() {
               </div>
             )}
 
-            {/* =================================================
-                SHIPPING
-                ================================================= */}
+            {/* SHIPPING */}
 
             {activeTab === "shipping" && (
               <div>
@@ -694,8 +647,9 @@ export default function ProductDetails() {
                 </h3>
 
                 <p>
-                  Your order will be shipped using our
-                  proprietary logistics system known as{" "}
+                  Your order will be shipped
+                  using our proprietary logistics
+                  system known as{" "}
                   <strong>
                     Throw & Hope™
                   </strong>.
@@ -712,8 +666,8 @@ export default function ProductDetails() {
                   </li>
 
                   <li>
-                    Transit: Somewhere between here and
-                    there
+                    Transit: Somewhere between here
+                    and there
                   </li>
 
                   <li>
@@ -729,9 +683,7 @@ export default function ProductDetails() {
               </div>
             )}
 
-            {/* =================================================
-                USELESS INFORMATION
-                ================================================= */}
+            {/* USELESS INFORMATION */}
 
             {activeTab === "useless" && (
               <div>
@@ -741,8 +693,8 @@ export default function ProductDetails() {
                 </h3>
 
                 <p>
-                  Congratulations. You clicked the tab
-                  nobody needed.
+                  Congratulations. You clicked
+                  the tab nobody needed.
                 </p>
 
                 <button
@@ -766,12 +718,13 @@ export default function ProductDetails() {
                     </p>
 
                     <p>
-                      • You are currently looking at it.
+                      • You are currently looking
+                      at it.
                     </p>
 
                     <p>
-                      • The website knows you are looking
-                      at it.
+                      • The website knows you are
+                      looking at it.
                     </p>
 
                     <p>
@@ -779,7 +732,8 @@ export default function ProductDetails() {
                     </p>
 
                     <p>
-                      • You have spent time reading this.
+                      • You have spent time reading
+                      this.
                     </p>
 
                     <p>
@@ -796,9 +750,9 @@ export default function ProductDetails() {
 
         </section>
 
-        {/* =====================================================
+        {/* =========================
             FINAL WARNING
-            ===================================================== */}
+           ========================= */}
 
         <section className="final-product-warning">
 
@@ -812,10 +766,11 @@ export default function ProductDetails() {
 
             <p>
               Once you purchase this product,
-              UselessMart™ accepts no responsibility for
-              satisfaction, dissatisfaction, confusion,
-              existential crises, geological consequences,
-              or unexpected rocks.
+              UselessMart™ accepts no responsibility
+              for satisfaction, dissatisfaction,
+              confusion, existential crises,
+              geological consequences, or
+              unexpected rocks.
             </p>
 
           </div>
@@ -823,7 +778,6 @@ export default function ProductDetails() {
         </section>
 
       </main>
-
     </div>
   );
 }
