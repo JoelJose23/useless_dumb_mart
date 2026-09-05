@@ -11,9 +11,8 @@
 ### Team Name: [Team Name]
 
 ### Team Members
-- Team Lead: Joel Jose - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Joel Jose - S3 CT
+- Member 2: Emmanuel P Babu - S3 CO
 
 ### Project Description
 
