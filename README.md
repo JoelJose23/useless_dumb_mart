@@ -1,7 +1,3 @@
-Absolutely 😂. For **UselessMart™**, the README should sound like a legitimate software project that slowly reveals it is absolutely not legitimate.
-
-Here’s a filled-out version you can basically paste directly into `README.md`:
-
 ````markdown
 <img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
@@ -536,19 +532,3 @@ Made with ❤️ at TinkerHub Useless Projects
 
 ![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
 
-```
-
-### One thing I'd change before submitting
-
-The **problem statement** is actually hilarious because it sounds like the beginning of a serious startup pitch:
-
-> **“After the rise of AI, all the websites are like robots, perfect, same and boring.”**
-
-Then immediately:
-
-> **“The internet needed something worse.”**
-
-That contrast is *exactly* the vibe of a Useless Project README. 😂
-
-Also, don't leave the screenshot placeholders in the final repo. Once you've taken the screenshots, replace those five lines with the actual GitHub image links.
-```
