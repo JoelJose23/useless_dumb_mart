@@ -5,12 +5,12 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,15 +30,21 @@ jobs:
         env:
           BASE_URL: /useless_dumb_mart/
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        run: |
-          cd dist
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "deploy: ${{ github.sha }}"
-          git branch -M gh-pages
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git push -f origin gh-pages
-        shell: bash
+        id: deployment
+        uses: actions/deploy-pages@v4
