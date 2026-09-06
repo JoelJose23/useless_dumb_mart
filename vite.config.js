@@ -20,5 +20,5 @@ export default defineConfig({
       },
     },
   ],
-  base: '/useless_dumb_mart/',
+  base: process.env.BASE_URL || '/useless_dumb_mart/',
 })
