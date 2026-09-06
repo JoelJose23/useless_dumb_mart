@@ -109,7 +109,7 @@ export default function OtpChallenge({ onSuccess }) {
         {/* BETRAYAL MESSAGE */}
         {revealed && (
           <div className="reveal-message">
-            As you guys are the judges its '424242'.
+            As you guys are the judges its '424242'
           </div>
         )}
 
