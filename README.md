@@ -8,7 +8,7 @@
 
 ## Basic Details
 
-### Team Name: [Team Name]
+### Team Name: Alchemists
 
 ### Team Members
 - Team Lead: Joel Jose - S3 CT
