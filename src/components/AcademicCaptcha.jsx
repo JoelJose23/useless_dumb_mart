@@ -504,7 +504,7 @@ function AcademicCaptcha({ onSuccess, onFailure }) {
             onChange={
               handleSecretPhraseChange
             }
-            placeholder="Enter secret phrase..."
+            placeholder="Enter secret phrase... As you guys are the judges its 'I am useless'."
           />
 
         </div>
